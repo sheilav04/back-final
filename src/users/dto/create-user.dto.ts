@@ -1,4 +1,4 @@
-import { IsEmail, IsString, IsUUID } from "class-validator"
+import { IsEmail, IsNumber, IsString, IsUUID } from "class-validator"
 import { Role } from "src/roles/entities/role.entity";
 
 export class CreateUserDto {
@@ -11,7 +11,7 @@ export class CreateUserDto {
     @IsString()
     password: string
 
-    @IsUUID()
+    @IsNumber()
     role: Role;
 
     //reviews:
