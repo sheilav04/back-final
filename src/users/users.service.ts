@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { Role } from 'src/roles/entities/role.entity';
+import { Review } from 'src/reviews/entities/review.entity';
 
 @Injectable()
 export class UsersService {
@@ -13,6 +14,8 @@ export class UsersService {
     private userRepository: Repository<User>,
     @InjectRepository(Role)
     private roleRepository: Repository<Role>,
+    @InjectRepository(Review)
+    private reviewRepository: Repository<Review>
   ){}
 
   async create_user(data_user: CreateUserDto) {
@@ -21,7 +24,7 @@ export class UsersService {
   }
 
   async get_users() {
-    return await this.userRepository.find({ relations: {role: true}})
+    return await this.userRepository.find({ relations: {role: true, review: true}})
   }
 
   async findOne(input_id: string) {

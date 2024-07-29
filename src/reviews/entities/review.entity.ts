@@ -1,10 +1,10 @@
 import { Mask } from "src/mask/maskEntity";
-import { Column } from "typeorm";
+import { User } from "src/users/entities/user.entity";
+import { Column, Entity, OneToMany } from "typeorm";
 
+@Entity('review')
 export class Review extends Mask{
     //movie
-
-    //user
 
     @Column('text')
     title: string
@@ -12,8 +12,12 @@ export class Review extends Mask{
     @Column('text')
     comment: string
 
-    @Column('number')
+    @Column('int')
     rates: number
 
     //comments
+
+    @OneToMany(() => User, (user) => user.review)
+    user: User
+    //user
 }

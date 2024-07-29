@@ -5,11 +5,13 @@ import { Repository } from 'typeorm';
 import { Role } from './entities/role.entity';
 import { Injectable } from '@nestjs/common';
 
+
 @Injectable()
 export class RolesService {
   constructor(
     @InjectRepository(Role)
-    private readonly roleRepository: Repository<Role>
+    private readonly roleRepository: Repository<Role>,
+    
 ){}
 
   async create_role(c_role: CreateRoleDto) {

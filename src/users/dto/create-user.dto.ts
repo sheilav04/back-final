@@ -1,4 +1,5 @@
-import { IsEmail, IsNumber, IsString, IsUUID } from "class-validator"
+import { IsEmail, IsNumber, IsOptional, IsString, IsUUID } from "class-validator"
+import { Review } from "src/reviews/entities/review.entity";
 import { Role } from "src/roles/entities/role.entity";
 
 export class CreateUserDto {
@@ -14,5 +15,7 @@ export class CreateUserDto {
     @IsNumber()
     role: Role;
 
-    //reviews:
+    @IsOptional()
+    @IsUUID()
+    review?: Review
 }

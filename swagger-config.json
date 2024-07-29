@@ -195,7 +195,7 @@
     },
     "/reviews": {
       "post": {
-        "operationId": "ReviewsController_create",
+        "operationId": "ReviewsController_create_review",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -214,7 +214,7 @@
         }
       },
       "get": {
-        "operationId": "ReviewsController_findAll",
+        "operationId": "ReviewsController_get_reviews",
         "parameters": [],
         "responses": {
           "200": {

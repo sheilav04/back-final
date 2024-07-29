@@ -1,6 +1,7 @@
 import { Mask } from "src/mask/maskEntity";
+import { Review } from "src/reviews/entities/review.entity";
 import { Role } from "src/roles/entities/role.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne} from "typeorm";
 
 @Entity('user')
 export class User extends Mask{
@@ -17,4 +18,7 @@ export class User extends Mask{
 
     @ManyToOne(() => Role, (role) => role.user)
     role: Role
+
+    @ManyToOne(() => Review, (review) => review.user)
+    review?: Review
 }
