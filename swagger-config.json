@@ -325,9 +325,20 @@
         ]
       }
     },
+    "/profile": {
+      "get": {
+        "operationId": "LoginController_profile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/login": {
       "post": {
-        "operationId": "LoginController_createJWT",
+        "operationId": "LoginController_create",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -340,7 +351,7 @@
           }
         },
         "responses": {
-          "201": {
+          "200": {
             "description": ""
           }
         }

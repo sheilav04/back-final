@@ -13,10 +13,13 @@ export class User extends Audit{
     @Column('text')
     username: string
 
-    @Column('text')
+    //@Column('text')
+    //email: string
+
+    @Column('varchar', {length: 255, unique: true, nullable:false })
     email: string
 
-    @Column('text')
+    @Column('text', {nullable: false})
     password: string
 
     //reviews:

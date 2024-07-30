@@ -10,5 +10,8 @@ import { Review } from 'src/reviews/entities/review.entity';
   imports: [TypeOrmModule.forFeature([User, Role, Review])],
   controllers: [UsersController],
   providers: [UsersService],
+  exports: [UsersService, TypeOrmModule.forFeature([User])],
 })
 export class UsersModule {}
+
+//originally, this doesn't have an exports label
