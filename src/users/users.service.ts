@@ -51,7 +51,10 @@ export class UsersService {
   }
 
   async update(input_id: string, update_data: UpdateUserDto) {
-    return await this.userRepository.update({id: input_id}, update_data)
+    await this.userRepository.update({id: input_id}, update_data)
+    return {
+      message: "the update was ok"
+    }
   }
 
   async remove(input_id: string) {
