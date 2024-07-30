@@ -444,7 +444,7 @@
     },
     "/comments-users": {
       "post": {
-        "operationId": "CommentsUsersController_create",
+        "operationId": "CommentsUsersController_publicComment",
         "parameters": [],
         "requestBody": {
           "required": true,

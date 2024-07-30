@@ -8,8 +8,8 @@ export class CommentsUsersController {
   constructor(private readonly commentsUsersService: CommentsUsersService) {}
 
   @Post()
-  create(@Body() createCommentsUserDto: CreateCommentsUserDto) {
-    return this.commentsUsersService.create(createCommentsUserDto);
+  publicComment(@Body() createComment: CreateCommentsUserDto) {
+    return this.commentsUsersService.publicComment(createComment);
   }
 
   @Get()

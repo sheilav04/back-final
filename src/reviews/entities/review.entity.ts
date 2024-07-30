@@ -1,4 +1,5 @@
 import { Audit } from "src/audit/auditEntity";
+import { CommentsUser } from "src/comments_users/entities/comments_user.entity";
 import { Movie } from "src/movies/entities/movie.entity";
 import { User } from "src/users/entities/user.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
@@ -23,8 +24,12 @@ export class Review extends Audit{
     @ManyToOne(() => User, (user) => user.review)
     user: User
 
+    //movie
     @ManyToOne(() => Movie, (movie) => movie.review)
     movie: Movie
-    //movie
+    
+    //comments_user
+    @ManyToOne(() => CommentsUser, (comments_user) => comments_user.user)
+    comments_user: CommentsUser
 
 }
