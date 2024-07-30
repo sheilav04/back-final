@@ -1,9 +1,11 @@
-import { Mask } from "src/mask/maskEntity";
+import { Audit } from "src/audit/auditEntity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('review')
-export class Review extends Mask{
+export class Review extends Audit{
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
     //movie
 
     @Column('text')

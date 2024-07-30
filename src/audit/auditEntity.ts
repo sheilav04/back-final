@@ -1,9 +1,7 @@
 import { Column, CreateDateColumn, DeleteDateColumn, PrimaryGeneratedColumn } from "typeorm";
 
-export abstract class Mask {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-  
+export abstract class Audit {
+    
     @CreateDateColumn()
     created_at: Date;
   

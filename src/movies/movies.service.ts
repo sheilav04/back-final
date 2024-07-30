@@ -1,26 +1,59 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Movie } from './entities/movie.entity';
+import { Genre } from 'src/genres/entities/genre.entity';
+import { MoviesGenre } from 'src/movies_genres/entities/movies_genre.entity';
 
 @Injectable()
 export class MoviesService {
-  create(createMovieDto: CreateMovieDto) {
-    return 'This action adds a new movie';
+  constructor(
+    @InjectRepository(Movie)
+    private movieRepository: Repository<Movie>,
+    @InjectRepository(Genre)
+    private genreRepository: Repository<Genre>,
+    @InjectRepository(MoviesGenre)
+    private moviesGenreRepository: Repository<MoviesGenre>
+  ){}
+
+  async createMovieWithGenres(movieData : CreateMovieDto, genreIds: number[]) {
+    const movie = this.movieRepository.create(movieData)
+    await this.movieRepository.save(movie)
+    
+    for(const genreId of genreIds){
+      const genre = await this.genreRepository.findOneBy({ id: genreId })
+      if(genre){
+       const movieGenre = {movie: movie, genre: genre} 
+       const movieGenreCreate = this.moviesGenreRepository.create(movieGenre) 
+       await this.moviesGenreRepository.save(movieGenreCreate)
+      }
+    }
+
+    return movie
   }
 
-  findAll() {
-    return `This action returns all movies`;
+  async findMoviesWithGenres() {
+    return this.movieRepository.find({
+      relations: ['moviesGenre','moviesGenre.genre']
+    })
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} movie`;
+  async findAll() {
+    return this.movieRepository.find()
   }
 
-  update(id: number, updateMovieDto: UpdateMovieDto) {
-    return `This action updates a #${id} movie`;
+  async findOne(input_id: number) {
+    return await this.movieRepository.findOne({where: {id : input_id}})
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} movie`;
+  async update(input_id: number, updateMovieDto: UpdateMovieDto) {
+    return await this.movieRepository.update({id: input_id}, updateMovieDto)
+  }
+
+  async remove(input_id: number) {
+    const to_delete = await this.movieRepository.findOne({where: {id: input_id}})
+    return await this.movieRepository.softRemove(to_delete)
   }
 }

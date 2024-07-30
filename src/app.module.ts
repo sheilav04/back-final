@@ -9,11 +9,11 @@ import { LoginModule } from './login/login.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeConfig } from './config/TypeConfig';
 import { GenresModule } from './genres/genres.module';
-import { ReleaseDateModule } from './release_date/release_date.module';
 import { CommentsUsersModule } from './comments_users/comments_users.module';
+import { MoviesGenresModule } from './movies_genres/movies_genres.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(typeConfig()),UsersModule, MoviesModule, ReviewsModule, RolesModule, LoginModule, GenresModule, ReleaseDateModule, CommentsUsersModule],
+  imports: [TypeOrmModule.forRoot(typeConfig()),UsersModule, MoviesModule, ReviewsModule, RolesModule, LoginModule, GenresModule, CommentsUsersModule, MoviesGenresModule],
   controllers: [AppController],
   providers: [AppService],
 })

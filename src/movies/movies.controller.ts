@@ -8,13 +8,13 @@ export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Post()
-  create(@Body() createMovieDto: CreateMovieDto) {
-    return this.moviesService.create(createMovieDto);
+  create(@Body() movieData, @Body('genre') genre: number[]) {
+    return this.moviesService.createMovieWithGenres(movieData, genre);
   }
 
   @Get()
   findAll() {
-    return this.moviesService.findAll();
+    return this.moviesService.findMoviesWithGenres();
   }
 
   @Get(':id')
