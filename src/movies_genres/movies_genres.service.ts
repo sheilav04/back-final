@@ -13,11 +13,11 @@ export class MoviesGenresService {
   ){}
 
   async create(createMoviesGenreDto: CreateMoviesGenreDto) {
-    return this.movieGenreRepository.save(createMoviesGenreDto);
+    return await this.movieGenreRepository.save(createMoviesGenreDto);
     }
 
-  findAll() {
-    return `This action returns all moviesGenres`;
+  async findAll() {
+    return await this.movieGenreRepository.find()
   }
 
   findOne(id: number) {

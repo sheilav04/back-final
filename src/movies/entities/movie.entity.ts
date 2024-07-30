@@ -1,6 +1,7 @@
 import { Audit } from "src/audit/auditEntity";
 import { MoviesGenre } from "src/movies_genres/entities/movies_genre.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Review } from "src/reviews/entities/review.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Movie extends Audit{
@@ -20,6 +21,8 @@ export class Movie extends Audit{
     moviesGenre: MoviesGenre[]
 
     //review
-
+    @OneToMany(() => Review, (review) => review.movie)
+    review: Review;
+    
     //imagen
 }

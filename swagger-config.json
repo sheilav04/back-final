@@ -666,7 +666,22 @@
       },
       "CreateReviewDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "rate"
+        ]
       },
       "UpdateReviewDto": {
         "type": "object",

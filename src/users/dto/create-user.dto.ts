@@ -15,7 +15,6 @@ export class CreateUserDto {
     @IsNumber()
     role: Role;
 
-    @IsOptional()
-    @IsUUID()
-    review?: Review
+    //@IsOptional()
+    //review?: Review
 }

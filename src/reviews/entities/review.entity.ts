@@ -1,25 +1,30 @@
 import { Audit } from "src/audit/auditEntity";
+import { Movie } from "src/movies/entities/movie.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('review')
 export class Review extends Audit{
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn('increment')
     id: string;
-    //movie
-
+    
     @Column('text')
     title: string
 
     @Column('text')
-    comment: string
+    description: string
 
     @Column('int')
-    rates: number
+    rate: number
 
-    //comments
+    //coments_from_users
 
-    @OneToMany(() => User, (user) => user.review)
-    user: User
     //user
+    @ManyToOne(() => User, (user) => user.review)
+    user: User
+
+    @ManyToOne(() => Movie, (movie) => movie.review)
+    movie: Movie
+    //movie
+
 }

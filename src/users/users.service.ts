@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   async get_users() {
-    return await this.userRepository.find({ relations: {role: true, review: true}})
+    return await this.userRepository.find({ relations: {role: true}})
   }
 
   async findOne(input_id: string) {
