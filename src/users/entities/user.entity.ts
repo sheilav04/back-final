@@ -24,12 +24,12 @@ export class User extends Audit{
 
     //reviews:
 
-    @ManyToOne(() => Role, (role) => role.user)
+    @ManyToOne(() => Role, (role) => role.user, {eager: true})
     role: Role
 
     @OneToMany(() => Review, (review) => review.user)
     review: Review;
     
-    @ManyToOne(() => CommentsUser, (comments_user) => comments_user.user)
+    @ManyToOne(() => CommentsUser, (comments_user) => comments_user.user, {onDelete: 'CASCADE'})
     comments_user: CommentsUser
 }

@@ -1,6 +1,6 @@
 import { IsString } from "class-validator";
 import { User } from "src/users/entities/user.entity";
-import { CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('role')
 export class Role{
@@ -8,7 +8,7 @@ export class Role{
     @PrimaryGeneratedColumn('increment')
     id: number;
 
-    @IsString()
+    @Column('text')
     name: string;
   
     @CreateDateColumn()

@@ -36,7 +36,7 @@ export class LoginService {
     return{
       token: token,
       email: user.email,
-      role: user.role
+      role: user.role.name,
     }
   }
 

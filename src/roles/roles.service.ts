@@ -15,7 +15,7 @@ export class RolesService {
 ){}
 
   async create_role(c_role: CreateRoleDto) {
-    //const new_role: CreateRoleDto = this.roleRepository.create(c_role)
+    const new_role: CreateRoleDto = this.roleRepository.create(c_role)
     return await this.roleRepository.save(c_role)
   }
 
