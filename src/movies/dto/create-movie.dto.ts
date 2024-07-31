@@ -12,5 +12,8 @@ export class CreateMovieDto {
     @IsNumber()
     release_date: number
 
+    @IsString()
+    image: string
+
     moviesGenre: MoviesGenre[]
 }

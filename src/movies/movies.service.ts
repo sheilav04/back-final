@@ -36,9 +36,12 @@ export class MoviesService {
 
   async findMoviesWithGenres() {
     return this.movieRepository.find({
-      relations: ['moviesGenre','moviesGenre.genre', 'review']
+      relations: ['moviesGenre','moviesGenre.genre', 'review'] 
     })
   }
+  //another way to see the relations, careful with the use of eager
+  //{moviesGenre: {genre: true}}
+  
 
   async findAll() {
     return this.movieRepository.find()

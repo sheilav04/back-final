@@ -7,10 +7,11 @@ export class MoviesGenre {
     @PrimaryGeneratedColumn('increment')
     id: number
 
-    @ManyToOne(() => Movie, movie => movie.moviesGenre, {eager: true})
+    //careful with the use of eager
+    @ManyToOne(() => Movie, movie => movie.moviesGenre, {onDelete: 'CASCADE'})
     movie: Movie
 
-    @ManyToOne(() => Genre, genre => genre.movieGenres, {eager: true})
+    @ManyToOne(() => Genre, genre => genre.movieGenres, {onDelete: 'CASCADE'})
     genre: Genre
 
 }

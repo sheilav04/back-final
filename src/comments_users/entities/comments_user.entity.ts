@@ -19,3 +19,5 @@ export class CommentsUser extends Audit{
     @OneToMany(() => Review, (review) => review.comments_user)
     review: Review;
 }
+
+//review_user

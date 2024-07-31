@@ -6,6 +6,12 @@ import * as fs from 'fs'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {cors: true});
+  
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    methods: 'GET,POST,PUT, PATCH ,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
+  });
 
   app.useGlobalPipes(
     new ValidationPipe({

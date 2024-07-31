@@ -7,7 +7,7 @@ export const typeConfig = (): TypeOrmModuleOptions => {
     port: 3306,
     username: 'root',
     password: 'Bootcamp052024',
-    database: 'db_login',
+    database: 'db_movie',
     entities: ['dist/**/*.entity.{ts,js}'],
     synchronize: true,
  }

@@ -17,6 +17,9 @@ export class Movie extends Audit{
     @Column('int')
     release_date: number
 
+    @Column('text')
+    image: string
+
     @OneToMany(() => MoviesGenre, (moviesGenre) => moviesGenre.movie)
     moviesGenre: MoviesGenre[]
 
