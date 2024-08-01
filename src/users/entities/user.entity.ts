@@ -30,6 +30,6 @@ export class User extends Audit{
     @OneToMany(() => Review, (review) => review.user)
     review: Review;
     
-    @ManyToOne(() => CommentsUser, (comments_user) => comments_user.user, {onDelete: 'CASCADE'})
+    @OneToMany(() => CommentsUser, (comments_user) => comments_user.user)
     comments_user: CommentsUser
 }

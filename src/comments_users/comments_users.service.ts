@@ -14,11 +14,12 @@ export class CommentsUsersService {
 
   async publicComment(createComment: CreateCommentsUserDto) {
     const new_comment: CreateCommentsUserDto = this.commentRepository.create(createComment)
+    console.log(new_comment);
     return await this.commentRepository.save(new_comment)
   }
 
   async findAll() {
-    return await this.commentRepository.find({ relations: {user: true, review: true}})
+    return await this.commentRepository.find({relations: { user: true }})
   }
 
   findOne(id: number) {

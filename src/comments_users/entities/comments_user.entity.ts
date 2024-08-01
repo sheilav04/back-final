@@ -1,7 +1,7 @@
 import { Audit } from "src/audit/auditEntity";
 import { Review } from "src/reviews/entities/review.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('comment-user')
 export class CommentsUser extends Audit{
@@ -11,13 +11,12 @@ export class CommentsUser extends Audit{
     @Column('text')
     comment: string    
 
-    //id_user
-    @OneToMany(() => User, (user) => user.comments_user)
-    user: User;
+    @ManyToOne(() => Review, (review) => review.comments_user, {eager: true})
+    review: Review
 
-    //id_review
-    @OneToMany(() => Review, (review) => review.comments_user)
-    review: Review;
+    @ManyToOne(() => User, (user) => user.comments_user, {eager: true})
+    user: User
+
 }
 
 //review_user

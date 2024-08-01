@@ -2,7 +2,7 @@ import { Audit } from "src/audit/auditEntity";
 import { CommentsUser } from "src/comments_users/entities/comments_user.entity";
 import { Movie } from "src/movies/entities/movie.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('review')
 export class Review extends Audit{
@@ -27,7 +27,6 @@ export class Review extends Audit{
     movie: Movie
     
     //comments_user
-    @ManyToOne(() => CommentsUser, (comments_user) => comments_user.user, {onDelete: 'CASCADE'})
+    @OneToMany(() => CommentsUser, (comments_user) => comments_user.review)
     comments_user: CommentsUser
-
 }

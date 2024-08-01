@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger"
-import { IsNumber, IsOptional, IsString, Length, Min, MinLength } from "class-validator"
+import { IsNumber, IsOptional, IsString, IsUUID, Length, Min, MinLength } from "class-validator"
+import { CommentsUser } from "src/comments_users/entities/comments_user.entity"
 import { Movie } from "src/movies/entities/movie.entity"
 import { User } from "src/users/entities/user.entity"
 
@@ -21,12 +22,12 @@ export class CreateReviewDto {
     rate: number
 
     //movie
-    @IsOptional()
-    movie?: Movie
+    @IsNumber()
+    movie: Movie
 
-    @IsOptional()
-    user?: User
+    @IsUUID()
+    user: User
 
-
-    //coments_from_users
+    @IsNumber()
+    comments_user: CommentsUser
 }
