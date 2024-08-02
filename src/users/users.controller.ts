@@ -18,6 +18,12 @@ export class UsersController {
     return this.usersService.create(data_user);
   }
 
+  //this is to restore the user
+  @Post('restore/:id')
+  restoreReview(@Param('id') input_id: string) {
+    return this.usersService.restoreUser(input_id);
+  }
+
   @Get()
   get_users() {
     return this.usersService.get_users();

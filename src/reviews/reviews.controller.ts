@@ -31,4 +31,9 @@ export class ReviewsController {
   remove(@Param('id') input_id: string) {
     return this.reviewsService.remove(input_id);
   }
+
+  @Delete('user/:userId')
+  removeReviewsOfUser(@Param('userId') userId: string) {
+    return this.reviewsService.removeReviewsOfUser(userId);
+  }
 }

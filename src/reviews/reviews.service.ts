@@ -36,4 +36,15 @@ export class ReviewsService {
     const to_delete = await this.reviewRepository.findOne({where: {id: input_id}})
     return await this.reviewRepository.softRemove(to_delete)
   }
+
+  async removeReviewsOfUser(userId: string) {
+    const to_delete = await this.reviewRepository.findOne({where: {user: {id: userId}}})
+    
+    const removedReviews = await this.reviewRepository.softRemove(to_delete)
+
+    return {
+      message: `Removed reviews for user ${userId}`,
+      removedReviews
+  };
+  }
 }

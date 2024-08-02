@@ -31,6 +31,28 @@ export class UsersService {
     return await this.userRepository.save(finalUser)
   }
 
+  //restore user
+  async restoreUser(input_id: string ){
+    const softDeletedUser = await this.userRepository.findOne({
+      where: { id: input_id },
+      withDeleted: true
+    });
+
+    if (!softDeletedUser) {
+      throw new HttpException(`User with ID "${input_id}" not found`, HttpStatus.NOT_FOUND)
+    }
+
+    if (softDeletedUser.deleted_at === null) {
+      return { message: "This user is not deleted" };
+    }
+
+    const restoredUser = await this.userRepository.recover(softDeletedUser);
+    return {
+      message: "User restored successfully",
+      user: restoredUser
+    };
+  }
+
   async get_users() {
     return await this.userRepository.find({ relations: {role: true, comments_user: true, review: true}})
   }

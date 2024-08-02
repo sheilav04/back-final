@@ -19,7 +19,7 @@ export class Review extends Audit{
     rate: number
 
     //user
-    @ManyToOne(() => User, (user) => user.review)
+    @ManyToOne(() => User, (user) => user.review, {onDelete: 'CASCADE'})
     user: User
 
     //movie

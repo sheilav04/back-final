@@ -7,4 +7,6 @@ export abstract class Audit {
   
     @DeleteDateColumn()
     deleted_at?: Date;
+
+    
   }

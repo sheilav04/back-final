@@ -22,6 +22,26 @@
         }
       }
     },
+    "/users/restore/{id}": {
+      "post": {
+        "operationId": "UsersController_restoreReview",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/users": {
       "get": {
         "operationId": "UsersController_get_users",
@@ -267,6 +287,26 @@
         "parameters": [
           {
             "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/reviews/user/{userId}": {
+      "delete": {
+        "operationId": "ReviewsController_removeReviewsOfUser",
+        "parameters": [
+          {
+            "name": "userId",
             "required": true,
             "in": "path",
             "schema": {
