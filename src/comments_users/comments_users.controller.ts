@@ -1,8 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { CommentsUsersService } from './comments_users.service';
 import { CreateCommentsUserDto } from './dto/create-comments_user.dto';
 import { UpdateCommentsUserDto } from './dto/update-comments_user.dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthUserGuard } from 'src/auth/auth.user.guard';
 
+@UseGuards(AuthUserGuard)
+@ApiTags('Comment-Users')
+@ApiBearerAuth()
 @Controller('comments-users')
 export class CommentsUsersController {
   constructor(private readonly commentsUsersService: CommentsUsersService) {}

@@ -19,7 +19,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/users/restore/{id}": {
@@ -39,7 +47,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/users": {
@@ -50,7 +66,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/users/{id}": {
@@ -70,7 +94,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "UsersController_update",
@@ -98,7 +130,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "UsersController_remove",
@@ -116,7 +156,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/movies": {
@@ -223,7 +271,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "operationId": "ReviewsController_get_reviews",
@@ -232,7 +288,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/reviews/{id}": {
@@ -252,7 +316,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "ReviewsController_update",
@@ -280,7 +352,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "ReviewsController_remove",
@@ -298,7 +378,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/reviews/user/{id}": {
@@ -318,7 +406,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Reviews"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/roles": {
@@ -375,7 +471,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Login"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/login": {
@@ -396,7 +500,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Login"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/genres": {
@@ -417,7 +529,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "operationId": "GenresController_findAll",
@@ -426,7 +546,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/genres/{id}": {
@@ -446,7 +574,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "GenresController_update",
@@ -474,7 +610,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "GenresController_remove",
@@ -492,7 +636,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/comments-users": {
@@ -513,7 +665,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Comment-Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "operationId": "CommentsUsersController_findAll",
@@ -522,7 +682,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Comment-Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/comments-users/{id}": {
@@ -542,7 +710,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Comment-Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "CommentsUsersController_update",
@@ -570,7 +746,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Comment-Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "CommentsUsersController_remove",
@@ -588,7 +772,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Comment-Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/movies-genres": {
@@ -609,7 +801,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies-Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "operationId": "MoviesGenresController_findAll",
@@ -618,7 +818,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies-Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/movies-genres/{id}": {
@@ -638,7 +846,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies-Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "MoviesGenresController_update",
@@ -666,7 +882,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies-Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "MoviesGenresController_remove",
@@ -684,7 +908,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies-Genres"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     }
   },
@@ -776,15 +1008,37 @@
       },
       "CreateLoginDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
       },
       "CreateGenreDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
       },
       "UpdateGenreDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
       },
       "CreateCommentsUserDto": {
         "type": "object",
@@ -794,13 +1048,39 @@
         "type": "object",
         "properties": {}
       },
-      "CreateMoviesGenreDto": {
+      "Movie": {
         "type": "object",
         "properties": {}
       },
-      "UpdateMoviesGenreDto": {
+      "Genre": {
         "type": "object",
         "properties": {}
+      },
+      "CreateMoviesGenreDto": {
+        "type": "object",
+        "properties": {
+          "movie": {
+            "$ref": "#/components/schemas/Movie"
+          },
+          "genre": {
+            "$ref": "#/components/schemas/Genre"
+          }
+        },
+        "required": [
+          "movie",
+          "genre"
+        ]
+      },
+      "UpdateMoviesGenreDto": {
+        "type": "object",
+        "properties": {
+          "movie": {
+            "$ref": "#/components/schemas/Movie"
+          },
+          "genre": {
+            "$ref": "#/components/schemas/Genre"
+          }
+        }
       }
     }
   }

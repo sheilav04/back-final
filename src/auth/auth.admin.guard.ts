@@ -9,7 +9,7 @@ export class AuthAdminGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
     const role = request.headers['role'];
 
-    // Verificar si el header 'role' es igual a 'admin'
+   
 
     return role === 'admin';
   }

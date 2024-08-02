@@ -2,7 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { MoviesGenresService } from './movies_genres.service';
 import { CreateMoviesGenreDto } from './dto/create-movies_genre.dto';
 import { UpdateMoviesGenreDto } from './dto/update-movies_genre.dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Movies-Genres')
+@ApiBearerAuth()
 @Controller('movies-genres')
 export class MoviesGenresController {
   constructor(private readonly moviesGenresService: MoviesGenresService) {}
