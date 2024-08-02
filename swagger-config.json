@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/users": {
+    "/users/register": {
       "post": {
         "operationId": "UsersController_create_user",
         "parameters": [],
@@ -20,7 +20,9 @@
             "description": ""
           }
         }
-      },
+      }
+    },
+    "/users": {
       "get": {
         "operationId": "UsersController_get_users",
         "parameters": [],
@@ -663,9 +665,32 @@
       }
     },
     "schemas": {
-      "CreateUserDto": {
+      "Role": {
         "type": "object",
         "properties": {}
+      },
+      "CreateUserDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          }
+        },
+        "required": [
+          "username",
+          "email",
+          "password",
+          "role"
+        ]
       },
       "UpdateUserDto": {
         "type": "object",

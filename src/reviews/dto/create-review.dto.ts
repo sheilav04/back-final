@@ -28,6 +28,6 @@ export class CreateReviewDto {
     @IsUUID()
     user: User
 
-    @IsNumber()
-    comments_user: CommentsUser
+    //@IsNumber()
+    //comments_user?: CommentsUser
 }

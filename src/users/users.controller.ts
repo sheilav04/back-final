@@ -13,7 +13,7 @@ export class UsersController {
   //}
 
   //this is for the login
-  @Post()
+  @Post('register')
   create_user(@Body() data_user: CreateUserDto) {
     return this.usersService.create(data_user);
   }

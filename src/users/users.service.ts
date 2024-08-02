@@ -12,11 +12,7 @@ import { hashPassword } from 'src/common/utils/hashPassword.utils';
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private userRepository: Repository<User>,
-    @InjectRepository(Role)
-    private roleRepository: Repository<Role>,
-    @InjectRepository(Review)
-    private reviewRepository: Repository<Review>
+    private userRepository: Repository<User>
   ){}
 
   //async create_user(data_user: CreateUserDto) {
@@ -24,7 +20,7 @@ export class UsersService {
   //  return await this.userRepository.save(new_user)
   //}
 
-  //create for login, with hashed password
+  //create for login and register, with hashed password
   async create(createUser: CreateUserDto){
     const checkEmailExistence = await this.userRepository.findOne({where: {email: createUser.email}})
     if(checkEmailExistence){
@@ -38,7 +34,7 @@ export class UsersService {
   }
 
   async get_users() {
-    return await this.userRepository.find({ relations: {role: true}})
+    return await this.userRepository.find({ relations: {role: true, comments_user: true, review: true}})
   }
 
   async findOne(input_id: string) {

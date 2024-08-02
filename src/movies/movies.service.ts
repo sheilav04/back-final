@@ -48,7 +48,7 @@ export class MoviesService {
   }
 
   async findOne(input_id: number) {
-    return await this.movieRepository.findOne({where: {id : input_id}, relations:{ review: { user: true, comments_user: true }}})
+    return await this.movieRepository.findOne({where: {id : input_id}, relations:{ moviesGenre: {genre: true}, review: { user: true, comments_user: true }}})
   }
 
   async update(input_id: number, updateMovieDto: UpdateMovieDto) {
