@@ -175,7 +175,15 @@
           "201": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "operationId": "MoviesController_findAll",
@@ -184,7 +192,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/movies/{id}": {
@@ -204,7 +220,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "operationId": "MoviesController_update",
@@ -232,7 +256,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "operationId": "MoviesController_remove",
@@ -250,7 +282,15 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Movies"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/reviews": {
