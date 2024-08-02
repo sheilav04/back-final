@@ -21,7 +21,7 @@ export class ReviewsService {
   }
 
   async get_reviews() {
-    return await this.reviewRepository.find({relations: {user: true, movie: true}})
+    return await this.reviewRepository.find({relations: {user: true, movie: true, comments_user: true}})
   }
 
   async findOne(input_id: string) {

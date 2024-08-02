@@ -4,8 +4,6 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
-import { Role } from 'src/roles/entities/role.entity';
-import { Review } from 'src/reviews/entities/review.entity';
 import { hashPassword } from 'src/common/utils/hashPassword.utils';
 
 @Injectable()
@@ -38,7 +36,7 @@ export class UsersService {
   }
 
   async findOne(input_id: string) {
-    return await this.userRepository.findOne({where: {id : input_id}})
+    return await this.userRepository.findOne({where: {id : input_id}, relations: {review: true, comments_user: true}})
   }
 
   //fun for the login
