@@ -301,12 +301,12 @@
         }
       }
     },
-    "/reviews/user/{userId}": {
+    "/reviews/user/{id}": {
       "delete": {
         "operationId": "ReviewsController_removeReviewsOfUser",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "required": true,
             "in": "path",
             "schema": {

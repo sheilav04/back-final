@@ -32,8 +32,8 @@ export class ReviewsController {
     return this.reviewsService.remove(input_id);
   }
 
-  @Delete('user/:userId')
-  removeReviewsOfUser(@Param('userId') userId: string) {
-    return this.reviewsService.removeReviewsOfUser(userId);
+  @Delete('user/:id')
+  removeReviewsOfUser(@Param('id') id: string) {
+    return this.reviewsService.removeReviewsOfUser(id);
   }
 }
